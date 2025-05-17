@@ -109,6 +109,14 @@
     @apply bg-background text-foreground;
     scroll-behavior: smooth;
   }
+  /* a:hover {
+    @apply text-accent; 
+    transition: color 0.2s ease-in-out; 
+  } */
+  /* .sidebar-link:hover {
+ @apply text-accent; 
+ transition: color 0.2s ease-in-out; 
+  } */
   section {
     @apply py-16 md:py-24 px-4 sm:px-6 lg:px-8;
   }
