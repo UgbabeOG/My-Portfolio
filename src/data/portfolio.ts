@@ -1,10 +1,9 @@
 import type { Project, Skill, SocialLink } from '@/types';
-import { Code2, Database, Server, Cloud, Smartphone, Palette, Linkedin, Github, Twitter, Mail, Briefcase, Brain } from 'lucide-react';
+import { Code2, Database,  Cloud, Smartphone, Palette, Linkedin, Github, Twitter, Mail, Brain } from 'lucide-react';
 
 export const skills: Skill[] = [
   { name: 'React', icon: Code2 },
   { name: 'Next.js', icon: Code2 },
-  { name: 'Node.js', icon: Server },
   { name: 'TypeScript', icon: Code2 },
   { name: 'Python', icon: Code2 },
   { name: 'Databases', icon: Database },
@@ -59,14 +58,15 @@ export const socialLinks: SocialLink[] = [
   { name: 'GitHub', icon: Github, url: 'https://github.com/yourusername' },
   { name: 'LinkedIn', icon: Linkedin, url: 'https://linkedin.com/in/yourusername' },
   { name: 'Twitter', icon: Twitter, url: 'https://twitter.com/yourusername' },
-  { name: 'Email', icon: Mail, url: 'mailto:youremail@example.com' },
+  { name: 'Email', icon: Mail, url: 'mailto:ugbabe.og@gmail.com' },
 ];
 
 export const profile = {
-  name: "Alex Johnson",
-  title: "Full Stack Web Developer & AI Enthusiast",
+  name: "Ugbabe Choco",
+  title: "Full Stack Web Developer & Tech Enthusiast",
   bio: "Passionate about creating innovative web solutions that solve real-world problems. Experienced in building scalable applications with modern technologies and integrating AI for enhanced user experiences. Always eager to learn and explore new frontiers in tech.",
   avatarUrl: "https://placehold.co/200x200.png",
   avatarHint: "professional portrait",
   resumeUrl: "#", // Link to resume PDF
+  email: "Ugbabe.og@gmail.com", // email address
 };

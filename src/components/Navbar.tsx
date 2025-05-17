@@ -37,7 +37,7 @@ export function Navbar() {
       <Link
         href={href}
         className={cn(
-          "text-sm font-medium transition-colors hover:text-primary",
+          "text-sm font-medium transition-colors  hover:text-accent ",
           isActive ? "text-primary" : "text-foreground/80"
         )}
         onClick={() => setIsSheetOpen(false)}
@@ -74,10 +74,10 @@ export function Navbar() {
                 <div className="mb-8 flex justify-between items-center">
                   <Logo />
                   <SheetClose asChild>
-                    <Button variant="ghost" size="icon">
+                    {/* <Button variant="ghost" size="icon">
                       <X className="h-6 w-6" />
                       <span className="sr-only">Close menu</span>
-                    </Button>
+                    </Button> */}
                   </SheetClose>
                 </div>
                 <nav className="flex flex-col space-y-4">
