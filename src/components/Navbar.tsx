@@ -50,7 +50,7 @@ export function Navbar() {
   return (
     <header className={cn(
       "sticky top-0 z-50 w-full transition-all duration-300",
-      isScrolled ? "bg-background/95 shadow-md backdrop-blur-sm" : "bg-transparent"
+      isScrolled ? "bg-background/95 shadow-md dark:shadow-[0_4px_6px_-1px_rgba(255,255,255,0.1),_0_2px_4px_-2px_rgba(255,255,255,0.06)] backdrop-blur-sm" : "bg-transparent"
     )}>
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Logo />
