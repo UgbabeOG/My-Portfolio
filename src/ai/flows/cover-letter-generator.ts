@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview An AI agent that generates tailored cover letters based on user experience and job description.
@@ -46,8 +47,20 @@ const generateCoverLetterFlow = ai.defineFlow(
     inputSchema: CoverLetterInputSchema,
     outputSchema: CoverLetterOutputSchema,
   },
-  async input => {
-    const {output} = await prompt(input);
-    return output!;
+  async (input: CoverLetterInput): Promise<CoverLetterOutput> => {
+    const llmResponse = await prompt(input); // llmResponse is GenerateResponse<z.infer<typeof CoverLetterOutputSchema>>
+    
+    if (!llmResponse.output) {
+      console.error('AI failed to produce structured output conforming to the schema for cover letter generation.');
+      const rawText = llmResponse.text;
+      if (rawText) {
+        console.error('Raw AI response text for cover letter generation:', rawText);
+      }
+      // This error will be caught by the form's try/catch block and displayed as a toast
+      throw new Error('Failed to generate cover letter: The AI did not provide a response in the expected format. Please try again.');
+    }
+    
+    // Output is guaranteed to be non-null here and should match CoverLetterOutputSchema
+    return llmResponse.output;
   }
 );
