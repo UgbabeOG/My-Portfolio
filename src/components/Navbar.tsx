@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from 'next/link';
@@ -5,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetClose } from '@/components/ui/sheet';
 import { Logo } from '@/components/Logo';
 import { cn } from '@/lib/utils';
 import { ThemeToggleButton } from '@/components/ThemeToggleButton';
@@ -69,12 +70,15 @@ export function Navbar() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[280px] bg-background p-6">
+                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <div className="mb-8 flex justify-between items-center">
                   <Logo />
-                   <Button variant="ghost" size="icon" onClick={() => setIsSheetOpen(false)}>
+                  <SheetClose asChild>
+                    <Button variant="ghost" size="icon">
                       <X className="h-6 w-6" />
                       <span className="sr-only">Close menu</span>
                     </Button>
+                  </SheetClose>
                 </div>
                 <nav className="flex flex-col space-y-4">
                   {navItems.map((item) => (
