@@ -5,7 +5,6 @@ export const skills: Skill[] = [
   { name: 'React', icon: Code2 },
   { name: 'Next.js', icon: Code2 },
   { name: 'TypeScript', icon: Code2 },
-  { name: 'Python', icon: Code2 },
   { name: 'Databases', icon: Database },
   { name: 'Cloud Services', icon: Cloud },
   { name: 'UI/UX Design', icon: Palette },

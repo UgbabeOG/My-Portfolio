@@ -13,7 +13,7 @@ export function ProjectsSection() {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">Featured Projects</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"> 
+            <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl   dark:hover:shadow-[0_4px_6px_-1px_rgba(255,255,255,0.1),_0_2px_4px_-2px_rgba(255,255,255,0.06)] transition-shadow duration-300"> 
 
               <div className="relative h-56 w-full">
                 <Image
