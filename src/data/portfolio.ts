@@ -67,6 +67,6 @@ export const profile = {
   bio: "Passionate about creating innovative web solutions that solve real-world problems. Experienced in building scalable applications with modern technologies and integrating AI for enhanced user experiences. Always eager to learn and explore new frontiers in tech.",
   avatarUrl: "/cyborbMe.jpeg",
   avatarHint: "professional portrait",
-  resumeUrl: "#", // Link to resume PDF
+  resumeUrl: "https://docs.google.com/document/d/1IBfIJsTuLvP9tBfuEjxmkCXfvPEMTtindrXAY5NAwho/edit?usp=sharing", // Link to resume PDF
   email: "Ugbabe.og@gmail.com", // email address
 };
