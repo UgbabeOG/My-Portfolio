@@ -1,6 +1,7 @@
 import type { Project, Skill, SocialLink } from '@/types';
 import { Code2, Database,  Cloud, Smartphone, Palette, Linkedin, Github, Twitter, Mail, Brain } from 'lucide-react';
 
+
 export const skills: Skill[] = [
   { name: 'React', icon: Code2 },
   { name: 'Next.js', icon: Code2 },
@@ -64,7 +65,7 @@ export const profile = {
   name: "Ugbabe Choco",
   title: "Full Stack Web Developer & Tech Enthusiast",
   bio: "Passionate about creating innovative web solutions that solve real-world problems. Experienced in building scalable applications with modern technologies and integrating AI for enhanced user experiences. Always eager to learn and explore new frontiers in tech.",
-  avatarUrl: "https://placehold.co/200x200.png",
+  avatarUrl: "/cyborbMe.jpeg",
   avatarHint: "professional portrait",
   resumeUrl: "#", // Link to resume PDF
   email: "Ugbabe.og@gmail.com", // email address
