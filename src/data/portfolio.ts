@@ -91,6 +91,42 @@ export const projects: Project[] = [
     tags: ['React', 'JavaScript', 'API', 'Food'],
     repoUrl: 'https://github.com/UgbabeOG/recipe-app',
   },
+  {
+    id: '9',
+    title: 'Analog Clock',
+    description: 'An elegant analog clock built with HTML, CSS, and JavaScript featuring smooth animations and a modern design.',
+    imageUrl: 'https://placehold.co/600x400/4f46e5/ffffff?text=Analog+Clock',
+    imageHint: 'analog clock',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Animation'],
+    repoUrl: 'https://github.com/UgbabeOG/analogClock',
+  },
+  {
+    id: '10',
+    title: 'TicTacToe',
+    description: 'Classic two-player tic-tac-toe game with an interactive UI, win detection, and clean modern design.',
+    imageUrl: 'https://placehold.co/600x400/059669/ffffff?text=TicTacToe',
+    imageHint: 'tic-tac-toe game',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Game'],
+    repoUrl: 'https://github.com/UgbabeOG/Tic-Tac-Toe',
+  },
+  {
+    id: '11',
+    title: 'Rock Paper Scissors',
+    description: 'Interactive rock-paper-scissors game where you play against the computer with score tracking and engaging animations.',
+    imageUrl: 'https://placehold.co/600x400/dc2626/ffffff?text=Rock+Paper+Scissors',
+    imageHint: 'rock paper scissors game',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Game'],
+    repoUrl: 'https://github.com/UgbabeOG/rock-paper-scissor-master',
+  },
+  {
+    id: '12',
+    title: 'Calculator',
+    description: 'A functional calculator application with a sleek interface supporting basic arithmetic operations.',
+    imageUrl: 'https://placehold.co/600x400/0891b2/ffffff?text=Calculator',
+    imageHint: 'calculator app',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Utility'],
+    repoUrl: 'https://github.com/UgbabeOG/calculator',
+  },
 ];
 
 export const socialLinks: SocialLink[] = [
