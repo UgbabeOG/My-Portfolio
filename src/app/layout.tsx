@@ -5,6 +5,9 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { profile } from '@/data/portfolio';
+
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:9002';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,7 +46,7 @@ export const metadata: Metadata = {
     title: "Ugbabe Choco | Full Stack Web Developer & AI Enthusiast",
     description:
       "Explore the portfolio and projects of Ugbabe Choco, a developer building modern web apps and AI tools.",
-    url: "https://your-portfolio-url.com",
+    url: baseUrl,
     siteName: "Ugbabe Choco Portfolio",
     images: [
       {
@@ -74,8 +77,30 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: profile.name,
+    url: baseUrl,
+    image: `${baseUrl}${profile.avatarUrl}`,
+    description: profile.bio,
+    jobTitle: profile.title,
+    email: profile.email,
+    sameAs: [
+      'https://github.com/yourusername',
+      'https://linkedin.com/in/yourusername',
+      'https://twitter.com/yourusername',
+    ],
+  };
+
   return (
     <html lang="en" className="!scroll-smooth" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
         suppressHydrationWarning={true}

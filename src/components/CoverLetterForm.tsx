@@ -26,6 +26,16 @@ const coverLetterSchema = z.object({
 
 type CoverLetterFormValues = z.infer<typeof coverLetterSchema>;
 
+/**
+ * CoverLetterForm Component
+ *
+ * Provides a form for users to input their experience and job description.
+ * Uses React Hook Form for validation and Zod for schema definition.
+ * Generates cover letters via AI and provides clipboard functionality.
+ *
+ * @component
+ * @returns {JSX.Element} Form with two text areas and submit button
+ */
 export function CoverLetterForm() {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
@@ -66,15 +76,38 @@ export function CoverLetterForm() {
   }
 
   const handleCopy = () => {
-    if (generatedLetter) {
+    if (!generatedLetter) {
+      return;
+    }
+
+    if (navigator.clipboard?.writeText) {
       navigator.clipboard.writeText(generatedLetter)
         .then(() => {
           toast({ title: "Copied!", description: "Cover letter copied to clipboard." });
         })
-        .catch(err => {
+        .catch((err) => {
           console.error("Failed to copy text: ", err);
-          toast({ title: "Error", description: "Failed to copy text.", variant: "destructive" });
+          toast({ title: "Error", description: "Failed to copy text. Please try manual copy.", variant: "destructive" });
         });
+      return;
+    }
+
+    const textArea = document.createElement("textarea");
+    textArea.value = generatedLetter;
+    textArea.setAttribute("readonly", "");
+    textArea.style.position = "absolute";
+    textArea.style.left = "-9999px";
+    document.body.appendChild(textArea);
+    textArea.select();
+
+    try {
+      document.execCommand("copy");
+      toast({ title: "Copied!", description: "Cover letter copied to clipboard." });
+    } catch (error) {
+      console.error("Fallback copy failed:", error);
+      toast({ title: "Error", description: "Failed to copy text. Please try manual copy.", variant: "destructive" });
+    } finally {
+      document.body.removeChild(textArea);
     }
   };
 

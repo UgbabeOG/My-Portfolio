@@ -1,4 +1,4 @@
-import type { Project, Skill, SocialLink } from '@/types';
+import type { Project, Skill, SocialLink, Profile } from '@/types';
 import { Code2, Database, Cloud, Smartphone, Palette, Linkedin, Github, Twitter, Mail, Brain } from 'lucide-react';
 
 

@@ -10,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useEffect, useState } from 'react';
+import { Skeleton } from '@/components/ui/skeleton';
 
 export function ThemeToggleButton() {
   const { setTheme, theme } = useTheme();
@@ -21,9 +22,7 @@ export function ThemeToggleButton() {
   }, []);
 
   if (!mounted) {
-    // Render a placeholder or null until mounted to avoid hydration mismatch
-    // You can customize this placeholder (e.g., a Skeleton component)
-    return <div className="h-10 w-10 rounded-md border border-input bg-background" />;
+    return <Skeleton className="h-10 w-10 rounded-md" />;
   }
 
   return (

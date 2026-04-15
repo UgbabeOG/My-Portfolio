@@ -1,13 +1,24 @@
 import Image from 'next/image';
+import { memo } from 'react';
+import type { Skill } from '@/types';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { skills, profile } from '@/data/portfolio';
 import { Download, Briefcase } from 'lucide-react';
 import Link from 'next/link';
 
+const SkillCard = memo(({ skill }: { skill: Skill }) => (
+  <Card className="text-center hover:shadow-lg transition-shadow duration-300 bg-card/80 backdrop-blur-sm">
+    <CardContent className="p-6 flex flex-col items-center justify-center space-y-2">
+      <skill.icon className="h-10 w-10 text-primary" />
+      <p className="font-medium text-card-foreground">{skill.name}</p>
+    </CardContent>
+  </Card>
+));
+
 export function HeroSection() {
   return (
-    <section id="home" className="bg-gradient-to-br from-background to-muted/30 dark:from-background dark:to-muted/10 min-h-[calc(100vh-4rem)] flex items-center">
+    <section id="home" className="bg-gradient-to-br from-background to-muted/30 dark:from-background dark:to-muted/10 min-h-screen flex items-center">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 text-center md:text-left">
@@ -36,11 +47,10 @@ export function HeroSection() {
           <div className="flex justify-center">
             <Image
               src={profile.avatarUrl}
-              alt={profile.name}
+              alt={`Professional portrait of ${profile.name}`}
               width={300}
               height={300}
               priority
-              data-ai-hint={profile.avatarHint}
               className="rounded-full shadow-2xl border-4 border-primary/50 object-cover"
             />
           </div>
@@ -50,12 +60,7 @@ export function HeroSection() {
           <h2 className="text-3xl font-bold text-center mb-8 text-foreground">My Core Skills</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {skills.map((skill) => (
-              <Card key={skill.name} className="text-center hover:shadow-lg transition-shadow duration-300 bg-card/80 backdrop-blur-sm">
-                <CardContent className="p-6 flex flex-col items-center justify-center space-y-2">
-                  <skill.icon className="h-10 w-10 text-primary" />
-                  <p className="font-medium text-card-foreground">{skill.name}</p>
-                </CardContent>
-              </Card>
+              <SkillCard key={skill.name} skill={skill} />
             ))}
           </div>
         </div>

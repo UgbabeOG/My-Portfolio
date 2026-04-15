@@ -1,4 +1,5 @@
 import { CoverLetterForm } from '@/components/CoverLetterForm';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { FileText, Sparkles } from 'lucide-react';
 
 export const metadata = {
@@ -19,7 +20,9 @@ export default function CoverLetterGeneratorPage() {
             Craft a professional cover letter in minutes. Just provide your experience and the job description, and let AI do the rest.
           </p>
         </div>
-        <CoverLetterForm />
+        <ErrorBoundary>
+          <CoverLetterForm />
+        </ErrorBoundary>
       </div>
     </div>
   );

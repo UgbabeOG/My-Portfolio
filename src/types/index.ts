@@ -1,5 +1,15 @@
 import type { LucideIcon } from 'lucide-react';
 
+export interface Profile {
+  name: string;
+  title: string;
+  bio: string;
+  avatarUrl: string;
+  avatarHint?: string;
+  resumeUrl: string;
+  email: string;
+}
+
 export interface Skill {
   name: string;
   icon: LucideIcon;

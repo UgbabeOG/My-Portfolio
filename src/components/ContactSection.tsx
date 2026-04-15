@@ -19,6 +19,7 @@ import { socialLinks, profile } from '@/data/portfolio';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { submitContactForm, type ContactFormValues } from "@/actions/contactActions";
+import { Loader2 } from 'lucide-react';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -26,6 +27,16 @@ const contactFormSchema = z.object({
   message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 });
 
+/**
+ * ContactSection Component
+ *
+ * Displays a contact form and contact information.
+ * Handles form submission with server actions and provides user feedback.
+ * Includes semantic HTML with address element for contact details.
+ *
+ * @component
+ * @returns {JSX.Element} Contact form and information section
+ */
 export function ContactSection() {
   const { toast } = useToast();
   const form = useForm<ContactFormValues>({
@@ -114,7 +125,14 @@ export function ContactSection() {
                     )}
                   />
                   <Button type="submit" className="w-full md:w-auto shadow-md hover:shadow-lg transition-shadow" disabled={form.formState.isSubmitting}>
-                    {form.formState.isSubmitting ? "Sending..." : "Send Message"}
+                    {form.formState.isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      'Send Message'
+                    )}
                   </Button>
                 </form>
               </Form>
@@ -130,24 +148,26 @@ export function ContactSection() {
                 <p className="text-muted-foreground">
                   Feel free to reach out through the form or connect with me on social media. I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of something amazing.
                 </p>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-2">Email</h3>
-                  <Link href={`mailto:${profile.email || 'developer@example.com'}`} className="text-accent hover:underline">
-                    {profile.email || 'developer@example.com'}
-                  </Link>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-2">Connect with me</h3>
-                  <div className="flex space-x-4">
-                    {socialLinks.map((link) => (
-                      <Button key={link.name} asChild variant="outline" size="icon" className="transition-transform hover:scale-110">
-                        <Link href={link.url} target="_blank" rel="noopener noreferrer" aria-label={link.name}>
-                          <link.icon className="h-5 w-5" />
-                        </Link>
-                      </Button>
-                    ))}
+                <address className="not-italic space-y-4">
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-2">Email</h3>
+                    <Link href={`mailto:${profile.email || 'developer@example.com'}`} className="text-accent hover:underline">
+                      {profile.email || 'developer@example.com'}
+                    </Link>
                   </div>
-                </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-2">Connect with me</h3>
+                    <div className="flex space-x-4">
+                      {socialLinks.map((link) => (
+                        <Button key={link.name} asChild variant="outline" size="icon" className="transition-transform hover:scale-110">
+                          <Link href={link.url} target="_blank" rel="noopener noreferrer" aria-label={link.name}>
+                            <link.icon className="h-5 w-5" />
+                          </Link>
+                        </Button>
+                      ))}
+                    </div>
+                  </div>
+                </address>
               </CardContent>
             </Card>
           </div>

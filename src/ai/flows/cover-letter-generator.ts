@@ -10,12 +10,21 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { logger } from '@/lib/logger';
 
 const CoverLetterInputSchema = z.object({
   userExperience: z
     .string()
+    .trim()
+    .min(50, { message: 'Please describe your experience in at least 50 characters.' })
+    .max(5000, { message: 'Experience must be 5000 characters or fewer.' })
     .describe('Description of the user past work experience.'),
-  jobDescription: z.string().describe('The job description to tailor the cover letter to.'),
+  jobDescription: z
+    .string()
+    .trim()
+    .min(50, { message: 'Please provide a job description of at least 50 characters.' })
+    .max(5000, { message: 'Job description must be 5000 characters or fewer.' })
+    .describe('The job description to tailor the cover letter to.'),
 });
 export type CoverLetterInput = z.infer<typeof CoverLetterInputSchema>;
 
@@ -25,7 +34,15 @@ const CoverLetterOutputSchema = z.object({
 export type CoverLetterOutput = z.infer<typeof CoverLetterOutputSchema>;
 
 export async function generateCoverLetter(input: CoverLetterInput): Promise<CoverLetterOutput> {
-  return generateCoverLetterFlow(input);
+  const parsedInput = CoverLetterInputSchema.safeParse(input);
+
+  if (!parsedInput.success) {
+    throw new Error(
+      'Invalid input. Please ensure both fields are complete and under 5000 characters.'
+    );
+  }
+
+  return generateCoverLetterFlow(parsedInput.data);
 }
 
 const prompt = ai.definePrompt({
@@ -48,19 +65,27 @@ const generateCoverLetterFlow = ai.defineFlow(
     outputSchema: CoverLetterOutputSchema,
   },
   async (input: CoverLetterInput): Promise<CoverLetterOutput> => {
-    const llmResponse = await prompt(input); // llmResponse is GenerateResponse<z.infer<typeof CoverLetterOutputSchema>>
-    
-    if (!llmResponse.output) {
-      console.error('AI failed to produce structured output conforming to the schema for cover letter generation.');
-      const rawText = llmResponse.text;
-      if (rawText) {
-        console.error('Raw AI response text for cover letter generation:', rawText);
+    const maxAttempts = 3;
+    for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+      const llmResponse = await prompt(input);
+
+      if (llmResponse.output) {
+        return llmResponse.output;
       }
-      // This error will be caught by the form's try/catch block and displayed as a toast
-      throw new Error('Failed to generate cover letter: The AI did not provide a response in the expected format. Please try again.');
+
+      const rawText = llmResponse.text;
+      logger.error(
+        `Cover letter generation attempt ${attempt} failed to produce a valid structured response.`,
+        { rawText }
+      );
+
+      if (attempt < maxAttempts) {
+        await new Promise((resolve) => setTimeout(resolve, 1000 * attempt));
+      }
     }
-    
-    // Output is guaranteed to be non-null here and should match CoverLetterOutputSchema
-    return llmResponse.output;
+
+    throw new Error(
+      'Failed to generate cover letter after several attempts. Please try again later.'
+    );
   }
 );

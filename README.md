@@ -17,4 +17,19 @@ To set up and run this project locally, follow these steps:
 
 1. **Clone the repository:**
 
+### Environment Variables
+
+Create a `.env.local` file in the root of the project and add the following values:
+
+```env
+NEXT_PUBLIC_GENKIT_MODEL=googleai/gemini-2.0-flash
+NEXT_PUBLIC_GOOGLE_AI_API_KEY=your_google_ai_api_key
+NEXT_PUBLIC_BASE_URL=http://localhost:9002
+RESEND_API_KEY=your_resend_api_key
+CONTACT_EMAIL=your_email@example.com
+```
+
+Restart the development server after updating environment variables.
+
+
 

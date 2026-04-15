@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Disallow admin areas if any
+Disallow: /api/
+Disallow: /_next/
+
+# Allow crawling of static assets
+Allow: /_next/static
+Allow: /public/
+
+# Sitemap
+Sitemap: https://your-portfolio-url.com/sitemap.xml
