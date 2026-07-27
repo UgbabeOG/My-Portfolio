@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Briefcase, BarChart3 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetClose } from '@/components/ui/sheet';
@@ -14,6 +14,7 @@ import { ThemeToggleButton } from '@/components/ThemeToggleButton';
 const navItems = [
   { href: '/#home', label: 'Home' },
   { href: '/#projects', label: 'Projects' },
+  { href: '/#stats', label: 'Stats' },
   { href: '/#contact', label: 'Contact' },
   { href: '/cover-letter-generator', label: 'Cover Letter AI' },
 ];
@@ -37,7 +38,7 @@ export function Navbar() {
       <Link
         href={href}
         className={cn(
-          "text-sm font-medium transition-colors  hover:text-accent ",
+          "text-sm font-medium transition-colors hover:text-accent ",
           isActive ? "text-primary" : "text-foreground/80"
         )}
         onClick={() => setIsSheetOpen(false)}
@@ -50,7 +51,7 @@ export function Navbar() {
   return (
     <header className={cn(
       "sticky top-0 z-50 w-full transition-all duration-300",
-      isScrolled ? "bg-background/95 shadow-md dark:shadow-[0_4px_6px_-1px_rgba(255,255,255,0.1),_0_2px_4px_-2px_rgba(255,255,255,0.06)] backdrop-blur-sm" : "bg-transparent"
+      isScrolled ? "bg-background/95 shadow-md dark:shadow-[0_4px_6px_-1px_rgba(255,255,255,0.1),_0_2px_4px_-2px_rgba(255,255,255,0.06)] backdrop-blur-sm border-b border-border/50" : "bg-transparent border-b border-transparent"
     )}>
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Logo />
@@ -84,7 +85,19 @@ export function Navbar() {
                   {navItems.map((item) => (
                     <NavLink key={item.href} href={item.href} label={item.label} />
                   ))}
-                  {/* You might want to add ThemeToggleButton here for mobile too */}
+                  <div className="pt-4 border-t border-border/50">
+                    <p className="text-xs text-muted-foreground mb-2">Quick Actions</p>
+                    <Button asChild variant="outline" size="sm" className="w-full justify-start">
+                      <Link href="#projects" onClick={() => setIsSheetOpen(false)}>
+                        <Briefcase className="mr-2 h-4 w-4" /> View Projects
+                      </Link>
+                    </Button>
+                    <Button asChild variant="outline" size="sm" className="w-full justify-start mt-2">
+                      <Link href="#stats" onClick={() => setIsSheetOpen(false)}>
+                        <BarChart3 className="mr-2 h-4 w-4" /> View Stats
+                      </Link>
+                    </Button>
+                  </div>
                 </nav>
               </SheetContent>
             </Sheet>

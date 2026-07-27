@@ -1,12 +1,18 @@
 import type { Project, Skill, SocialLink, Profile } from '@/types';
-import { Code2, Database, Cloud, Smartphone, Palette, Linkedin, Github, Twitter, Mail, Brain } from 'lucide-react';
+import { Code2, Database, Cloud, Smartphone, Palette, Linkedin, Github, Twitter, Mail, Brain, Terminal, Container, Flame, Globe, Zap, Bell } from 'lucide-react';
 
 
 export const skills: Skill[] = [
   { name: 'React', icon: Code2 },
   { name: 'Next.js', icon: Code2 },
   { name: 'TypeScript', icon: Code2 },
-  { name: 'Databases', icon: Database },
+  { name: 'Go', icon: Terminal },
+  { name: 'Python', icon: Terminal },
+  { name: 'Docker', icon: Container },
+  { name: 'Firebase', icon: Flame },
+  { name: 'PostgreSQL', icon: Database },
+  { name: 'Tailwind CSS', icon: Palette },
+  { name: 'REST APIs', icon: Globe },
   { name: 'Cloud Services', icon: Cloud },
   { name: 'UI/UX Design', icon: Palette },
   { name: 'Mobile Development', icon: Smartphone },
@@ -21,8 +27,11 @@ export const projects: Project[] = [
     imageUrl: '/circuitsoul_blog_preview_1765890589285.png',
     imageHint: 'tech blog',
     tags: ['Next.js', 'TypeScript', 'Gemini AI', 'Google Trends'],
+    category: 'AI & Automation',
     liveUrl: 'https://the-circuit-soul-blog.vercel.app',
     repoUrl: 'https://github.com/UgbabeOG/the-circuit-soul-blog',
+    features: ['Google Trends integration', 'Gemini AI content generation', 'Real-time trending topics', 'Responsive design'],
+    highlights: ['AI-powered content', 'Trending topics API', 'Modern Next.js stack'],
   },
   {
     id: '2',
@@ -31,8 +40,11 @@ export const projects: Project[] = [
     imageUrl: '/scheduleai_preview_1765890695333.png',
     imageHint: 'AI scheduling',
     tags: ['Next.js', 'TypeScript', 'Gemini AI', 'Google Calendar API'],
+    category: 'AI & Automation',
     liveUrl: 'https://schedule-ai-xi.vercel.app',
     repoUrl: 'https://github.com/UgbabeOG/ScheduleAI-',
+    features: ['Natural language processing', 'Google Calendar sync', 'Personalized scheduling', 'AI optimization'],
+    highlights: ['Gemini AI integration', 'Calendar automation', 'Smart time management'],
   },
   {
     id: '3',
@@ -41,8 +53,11 @@ export const projects: Project[] = [
     imageUrl: '/handyconnect_preview_1765891068997.png',
     imageHint: 'service marketplace',
     tags: ['Next.js', 'Firebase', 'TypeScript', 'AI'],
+    category: 'Full-Stack & Web Apps',
     liveUrl: 'https://studio-iota-ashy.vercel.app',
     repoUrl: 'https://github.com/UgbabeOG/handyConnect',
+    features: ['User authentication', 'Task management', 'Service reviews', 'AI suggestions', 'Real-time messaging'],
+    highlights: ['Full-stack architecture', 'Firebase backend', 'AI recommendations'],
   },
   {
     id: '4',
@@ -51,8 +66,11 @@ export const projects: Project[] = [
     imageUrl: '/devfind_preview_1765891174480.png',
     imageHint: 'developer platform',
     tags: ['Next.js', 'TypeScript', 'pnpm', 'Open Source'],
+    category: 'Full-Stack & Web Apps',
     liveUrl: 'https://dev-find.vercel.app',
     repoUrl: 'https://github.com/UgbabeOG/devFind',
+    features: ['Developer profiles', 'Skill-based search', 'Collaboration matching', 'Open source'],
+    highlights: ['Community-driven', 'Skill filtering', 'Next.js performance'],
   },
   {
     id: '5',
@@ -61,7 +79,10 @@ export const projects: Project[] = [
     imageUrl: '/image_search_preview_1765891328926.png',
     imageHint: 'image search',
     tags: ['React', 'Vite', 'JavaScript', 'API Integration'],
+    category: 'Full-Stack & Web Apps',
     repoUrl: 'https://github.com/UgbabeOG/image-search-app',
+    features: ['Fast image search', 'Responsive grid', 'API integration', 'Lazy loading'],
+    highlights: ['Vite performance', 'React hooks', 'Clean UI'],
   },
   {
     id: '6',
@@ -70,7 +91,10 @@ export const projects: Project[] = [
     imageUrl: '/postitapp_preview_1765891491513.png',
     imageHint: 'social forum',
     tags: ['React', 'Novu', 'SQL', 'Real-time'],
+    category: 'Full-Stack & Web Apps',
     repoUrl: 'https://github.com/UgbabeOG/Post-It-App',
+    features: ['Real-time notifications', 'Community posts', 'User interactions', 'SQL database'],
+    highlights: ['Novu integration', 'Real-time updates', 'Social features'],
   },
   {
     id: '7',
@@ -79,8 +103,11 @@ export const projects: Project[] = [
     imageUrl: '/project-placeholder.svg',
     imageHint: 'AI tweet generation',
     tags: ['Next.js', 'Gemini AI', 'TypeScript', 'Social Media'],
+    category: 'AI & Automation',
     liveUrl: 'https://vimeo.com/1043260556',
     repoUrl: 'https://github.com/UgbabeOG/tweet-craft',
+    features: ['Gemini AI integration', 'Tweet generation', 'Social media optimization', 'Creative content'],
+    highlights: ['AI creativity', 'Next.js app', 'Social automation'],
   },
   {
     id: '8',
@@ -89,7 +116,10 @@ export const projects: Project[] = [
     imageUrl: '/project-placeholder.svg',
     imageHint: 'recipe app',
     tags: ['React', 'JavaScript', 'API', 'Food'],
+    category: 'Games & Utilities',
     repoUrl: 'https://github.com/UgbabeOG/recipe-app',
+    features: ['Recipe search', 'Ingredient filtering', 'Step-by-step instructions', 'Favorites system'],
+    highlights: ['API integration', 'Clean UX', 'Responsive design'],
   },
   {
     id: '9',
@@ -98,7 +128,10 @@ export const projects: Project[] = [
     imageUrl: '/project-placeholder.svg',
     imageHint: 'analog clock',
     tags: ['HTML', 'CSS', 'JavaScript', 'Animation'],
+    category: 'Games & Utilities',
     repoUrl: 'https://github.com/UgbabeOG/analogClock',
+    features: ['Smooth animations', 'Modern design', 'Responsive layout', 'Real-time updates'],
+    highlights: ['CSS animations', 'Vanilla JS', 'Clean code'],
   },
   {
     id: '10',
@@ -107,7 +140,10 @@ export const projects: Project[] = [
     imageUrl: '/project-placeholder.svg',
     imageHint: 'tic-tac-toe game',
     tags: ['HTML', 'CSS', 'JavaScript', 'Game'],
+    category: 'Games & Utilities',
     repoUrl: 'https://github.com/UgbabeOG/Tic-Tac-Toe',
+    features: ['Two-player mode', 'Win detection', 'Score tracking', 'Reset game'],
+    highlights: ['Game logic', 'Interactive UI', 'Clean design'],
   },
   {
     id: '11',
@@ -116,7 +152,10 @@ export const projects: Project[] = [
     imageUrl: '/project-placeholder.svg',
     imageHint: 'rock paper scissors game',
     tags: ['HTML', 'CSS', 'JavaScript', 'Game'],
+    category: 'Games & Utilities',
     repoUrl: 'https://github.com/UgbabeOG/rock-paper-scissor-master',
+    features: ['Vs computer mode', 'Score tracking', 'Animations', 'Random AI'],
+    highlights: ['Game AI', 'CSS animations', 'Score system'],
   },
   {
     id: '12',
@@ -125,23 +164,52 @@ export const projects: Project[] = [
     imageUrl: '/project-placeholder.svg',
     imageHint: 'calculator app',
     tags: ['HTML', 'CSS', 'JavaScript', 'Utility'],
+    category: 'Games & Utilities',
     repoUrl: 'https://github.com/UgbabeOG/calculator',
+    features: ['Basic arithmetic', 'Keyboard support', 'History display', 'Responsive design'],
+    highlights: ['Clean UI', 'Keyboard support', 'Functional math'],
+  },
+  {
+    id: '13',
+    title: 'Elite Gate Water Solutions',
+    description: 'Official corporate website for Elite Gate Multi Enterprises Nigeria Ltd, featuring industrial water engineering services and client inquiry portals.',
+    imageUrl: '/project-placeholder.svg',
+    imageHint: 'corporate website',
+    tags: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Enterprise Web'],
+    category: 'Fintech & Enterprise',
+    liveUrl: 'https://github.com/UgbabeOG/Elite-gate-waterSolutions',
+    repoUrl: 'https://github.com/UgbabeOG/Elite-gate-waterSolutions',
+    features: ['Corporate branding', 'Service showcase', 'Client inquiry portal', 'Responsive enterprise design'],
+    highlights: ['Next.js enterprise', 'Tailwind CSS', 'Professional UI'],
+  },
+  {
+    id: '14',
+    title: 'ASCII Web Containerized',
+    description: 'Containerized ASCII art generator microservice with web user interface, built with Go and packaged in Docker.',
+    imageUrl: '/project-placeholder.svg',
+    imageHint: 'ASCII art generator',
+    tags: ['Go', 'Docker', 'Microservice', 'HTML/CSS'],
+    category: 'Fintech & Enterprise',
+    liveUrl: 'https://github.com/UgbabeOG/ascii-web-containerized',
+    repoUrl: 'https://github.com/UgbabeOG/ascii-web-containerized',
+    features: ['ASCII art generation', 'Docker containerization', 'Web interface', 'Microservice architecture'],
+    highlights: ['Go microservice', 'Docker deployment', 'Containerized app'],
   },
 ];
 
 export const socialLinks: SocialLink[] = [
-  { name: 'GitHub', icon: Github, url: 'https://github.com/yourusername' },
-  { name: 'LinkedIn', icon: Linkedin, url: 'https://linkedin.com/in/yourusername' },
-  { name: 'Twitter', icon: Twitter, url: 'https://twitter.com/yourusername' },
+  { name: 'GitHub', icon: Github, url: 'https://github.com/UgbabeOG' },
+  { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/in/godwin-ugbabe' },
+  { name: 'Twitter', icon: Twitter, url: 'https://twitter.com/ugbabeOG' },
   { name: 'Email', icon: Mail, url: 'mailto:ugbabe.og@gmail.com' },
 ];
 
 export const profile = {
   name: "Ugbabe Choco",
-  title: "Full Stack Web Developer & Tech Enthusiast",
-  bio: "Passionate about creating innovative web solutions that solve real-world problems. Experienced in building scalable applications with modern technologies and integrating AI for enhanced user experiences. Always eager to learn and explore new frontiers in tech.",
+  title: "Full Stack Software Engineer & AI Builder",
+  bio: "Passionate about creating innovative web solutions that solve real-world problems. Experienced in building scalable applications with modern technologies and integrating AI for enhanced user experiences. Specialized in Next.js, TypeScript, Go, and cloud-native architectures. Always eager to learn and explore new frontiers in tech.",
   avatarUrl: "/cyborbMe.jpeg",
   avatarHint: "professional portrait",
   resumeUrl: "https://docs.google.com/document/d/1IBfIJsTuLvP9tBfuEjxmkCXfvPEMTtindrXAY5NAwho/edit?usp=sharing", // Link to resume PDF
-  email: "Ugbabe.og@gmail.com", // email address
+  email: "ugbabe.og@gmail.com", // email address
 };

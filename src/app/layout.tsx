@@ -5,7 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { profile } from '@/data/portfolio';
+import { profile, socialLinks } from '@/data/portfolio';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:9002';
 
@@ -20,17 +20,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ugbabe Choco | Full Stack Web Developer & Tech Enthusiast",
+  title: "Ugbabe Choco | Full Stack Software Engineer & AI Builder",
   description:
-    "Portfolio of Ugbabe Choco, a full stack web developer passionate about building scalable, modern web applications and integrating AI for real-world impact. Explore projects, skills, and an AI-powered cover letter generator.",
+    "Portfolio of Ugbabe Choco, a full stack software engineer specializing in Next.js, TypeScript, Go, Docker, and AI-powered applications. Explore enterprise projects, microservices, and modern web solutions.",
   keywords: [
     "Ugbabe Choco",
     "Full Stack Developer",
-    "Web Developer",
+    "Software Engineer",
     "AI Developer",
     "Next.js Portfolio",
     "React",
     "TypeScript",
+    "Go",
+    "Docker",
+    "Firebase",
+    "Microservices",
+    "Enterprise Web",
     "AI Cover Letter",
     "Software Engineer",
     "Frontend",
@@ -39,13 +44,13 @@ export const metadata: Metadata = {
     "Remote Developer",
   ],
   authors: [
-    { name: "Ugbabe Choco", url: "https://linkedin.com/in/yourusername" },
+    { name: "Ugbabe Choco", url: "https://www.linkedin.com/in/godwin-ugbabe" },
   ],
   creator: "Ugbabe Choco",
   openGraph: {
-    title: "Ugbabe Choco | Full Stack Web Developer & AI Enthusiast",
+    title: "Ugbabe Choco | Full Stack Software Engineer & AI Builder",
     description:
-      "Explore the portfolio and projects of Ugbabe Choco, a developer building modern web apps and AI tools.",
+      "Explore the portfolio and projects of Ugbabe Choco, a developer building modern web apps, AI tools, and enterprise solutions with Next.js, Go, and Docker.",
     url: baseUrl,
     siteName: "Ugbabe Choco Portfolio",
     images: [
@@ -61,11 +66,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ugbabe Choco | Full Stack Web Developer & Tech Enthusiast",
+    title: "Ugbabe Choco | Full Stack Software Engineer & AI Builder",
     description:
-      "Portfolio of Ugbabe Choco, a full stack web developer and Tech enthusiast.",
+      "Portfolio of Ugbabe Choco, a full stack software engineer building modern web apps, AI tools, and enterprise solutions.",
     images: ["/cyborbMe.jpeg"],
-    creator: "@yourusername",
+    creator: "@ugbabeOG",
   },
   icons: {
     icon: "/favicon.ico",
@@ -86,11 +91,7 @@ export default function RootLayout({
     description: profile.bio,
     jobTitle: profile.title,
     email: profile.email,
-    sameAs: [
-      'https://github.com/yourusername',
-      'https://linkedin.com/in/yourusername',
-      'https://twitter.com/yourusername',
-    ],
+    sameAs: socialLinks.map(link => link.url),
   };
 
   return (

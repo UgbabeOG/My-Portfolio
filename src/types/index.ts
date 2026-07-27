@@ -22,8 +22,11 @@ export interface Project {
   imageUrl: string;
   imageHint?: string;
   tags: string[];
+  category: string;
   liveUrl?: string;
   repoUrl?: string;
+  features?: string[];
+  highlights?: string[];
 }
 
 export interface SocialLink {
