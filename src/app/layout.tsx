@@ -20,9 +20,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ugbabe Choco | Full Stack Software Engineer & AI Builder",
+  title: "Ugbabe Choco | Full Stack Software Engineer & AI Native Developer | Backend Engineering | Systems Design | DevSecOps | Cloud | Security",
   description:
-    "Portfolio of Ugbabe Choco, a full stack software engineer specializing in Next.js, TypeScript, Go, Docker, and AI-powered applications. Explore enterprise projects, microservices, and modern web solutions.",
+    "Explore the portfolio of Ugbabe Choco, a full stack software engineer specializing in Next.js, TypeScript, Go, Python, Docker, API Design and Integration, AI-powered applications. Discover enterprise projects, microservices, and modern web solutions.",
   keywords: [
     "Ugbabe Choco",
     "Full Stack Developer",
@@ -36,7 +36,8 @@ export const metadata: Metadata = {
     "Firebase",
     "Microservices",
     "Enterprise Web",
-    "AI Cover Letter",
+    "API Design",
+    "AI Native",
     "Software Engineer",
     "Frontend",
     "Portfolio",
@@ -48,9 +49,9 @@ export const metadata: Metadata = {
   ],
   creator: "Ugbabe Choco",
   openGraph: {
-    title: "Ugbabe Choco | Full Stack Software Engineer & AI Builder",
+    title: "Ugbabe Choco | Full Stack Software Engineer & AI Native Developer | Backend Engineering | Systems Design | DevSecOps | Cloud | Security",
     description:
-      "Explore the portfolio and projects of Ugbabe Choco, a developer building modern web apps, AI tools, and enterprise solutions with Next.js, Go, and Docker.",
+       "Explore the portfolio of Ugbabe Choco, a full stack software engineer specializing in Next.js, TypeScript, Go, Python, Docker, API Design and Integration, AI-powered applications. Discover enterprise projects, microservices, and modern web solutions.",
     url: baseUrl,
     siteName: "Ugbabe Choco Portfolio",
     images: [
@@ -66,9 +67,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ugbabe Choco | Full Stack Software Engineer & AI Builder",
+    title: "Ugbabe Choco | Full Stack Software Engineer & AI Native Developer | Backend Engineering | Systems Design | DevSecOps | Cloud | Security",
     description:
-      "Portfolio of Ugbabe Choco, a full stack software engineer building modern web apps, AI tools, and enterprise solutions.",
+      "Explore the portfolio of Ugbabe Choco, a full stack software engineer specializing in Next.js, TypeScript, Go, Python, Docker, API Design and Integration, AI-powered applications. Discover enterprise projects, microservices, and modern web solutions.",
     images: ["/cyborbMe.jpeg"],
     creator: "@ugbabeOG",
   },
