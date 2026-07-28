@@ -25,13 +25,9 @@ export const skills: Skill[] = [
   { name: "Go", icon: Terminal },
   { name: "Python", icon: Terminal },
   { name: "Docker", icon: Container },
-  { name: "Firebase", icon: Flame },
-  { name: "PostgreSQL", icon: Database },
-  { name: "Tailwind CSS", icon: Palette },
-  { name: "REST APIs", icon: Globe },
+  { name: "API Design & Integration", icon: Globe },
   { name: "Cloud Services", icon: Cloud },
-  { name: "UI/UX Design", icon: Palette },
-  { name: "Mobile Development", icon: Smartphone },
+  { name: "Database", icon: Database },
   { name: "AI Integration", icon: Brain },
 ];
 
