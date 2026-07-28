@@ -303,6 +303,51 @@ export const projects: Project[] = [
     ],
     highlights: ["Go microservice", "Docker deployment", "Containerized app"],
   },
+  {
+    id: "15",
+    title: "Groupie Tracker",
+    description:
+      "A robust, high-performance Go web application that consumes a multi-part entertainment REST API, processes relational data, and provides a highly optimized, user-friendly visualization interface with offline-first resilience.",
+    imageUrl: "/project-placeholder.svg",
+    imageHint: "Go web application",
+    tags: ["Go", "REST API", "HTML Templates", "Docker", "Concurrency"],
+    category: "Full-Stack & Web Apps",
+    repoUrl: "https://github.com/UgbabeOG/Groupie-tracker",
+    features: [
+      "REST API integration",
+      "In-memory caching",
+      "Thread-safe hot swapping",
+      "Offline-first architecture",
+      "HTML template rendering",
+    ],
+    highlights: [
+      "Go standard library",
+      "Concurrent-safe design",
+      "Docker containerization",
+    ],
+  },
+  {
+    id: "16",
+    title: "go-reloaded",
+    description:
+      "A Go command-line tool that transforms plain text using special inline markers. It applies number conversions, case modifiers, article fixes, and punctuation normalization.",
+    imageUrl: "/project-placeholder.svg",
+    imageHint: "CLI text tool",
+    tags: ["Go", "CLI", "Text Processing", "Unit Tests"],
+    category: "Games & Utilities",
+    repoUrl: "https://github.com/UgbabeOG/go-reloaded",
+    features: [
+      "Number conversions (hex/bin)",
+      "Case modifiers",
+      "Article correction",
+      "Punctuation normalization",
+    ],
+    highlights: [
+      "Pure Go implementation",
+      "Text transformation engine",
+      "Unit test coverage",
+    ],
+  },
 ];
 
 export const socialLinks: SocialLink[] = [
