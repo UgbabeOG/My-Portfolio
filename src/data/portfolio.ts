@@ -195,24 +195,6 @@ export const projects: Project[] = [
     highlights: ["API integration", "Clean UX", "Responsive design"],
   },
   {
-    id: "9",
-    title: "Analog Clock",
-    description:
-      "An elegant analog clock built with HTML, CSS, and JavaScript featuring smooth animations and a modern design.",
-    imageUrl: "/project-placeholder.svg",
-    imageHint: "analog clock",
-    tags: ["HTML", "CSS", "JavaScript", "Animation"],
-    category: "Games & Utilities",
-    repoUrl: "https://github.com/UgbabeOG/analogClock",
-    features: [
-      "Smooth animations",
-      "Modern design",
-      "Responsive layout",
-      "Real-time updates",
-    ],
-    highlights: ["CSS animations", "Vanilla JS", "Clean code"],
-  },
-  {
     id: "10",
     title: "TicTacToe",
     description:
@@ -242,24 +224,6 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/UgbabeOG/rock-paper-scissor-master",
     features: ["Vs computer mode", "Score tracking", "Animations", "Random AI"],
     highlights: ["Game AI", "CSS animations", "Score system"],
-  },
-  {
-    id: "12",
-    title: "Calculator",
-    description:
-      "A functional calculator application with a sleek interface supporting basic arithmetic operations.",
-    imageUrl: "/project-placeholder.svg",
-    imageHint: "calculator app",
-    tags: ["HTML", "CSS", "JavaScript", "Utility"],
-    category: "Games & Utilities",
-    repoUrl: "https://github.com/UgbabeOG/calculator",
-    features: [
-      "Basic arithmetic",
-      "Keyboard support",
-      "History display",
-      "Responsive design",
-    ],
-    highlights: ["Clean UI", "Keyboard support", "Functional math"],
   },
   {
     id: "13",
